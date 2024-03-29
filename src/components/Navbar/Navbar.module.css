@@ -1,0 +1,312 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* LOGO_GROUP_STARTS */
+.logoGroup {
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+}
+.logoGroup:hover {
+    filter: brightness(0.4);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 21px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    filter: brightness(0.8);
+    position: relative;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.logo > span {
+    color: #ff3297;
+}
+
+/* LOGO_GROUP_ENDS */
+
+/* MENU_BLOCK_STARTS */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* MENU_BLOCK-downLoadCV_STARTS */
+
+.downloadCV {
+    color: #fefffe;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    filter: brightness(0.8);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.downloadLabel {
+    opacity: 0;
+    transform-origin: right;
+    transform: translateX(100%);
+    transition: all 0.4s ease-in-out;
+}
+
+.downloadCV:hover .downloadLabel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* MENU_BLOCK-downLoadCV_ENDS */
+
+/* MENU_BLOCK-downLoadCV-cvPopup_STARTS */
+.cvPopup {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: top center;
+    max-width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #303531;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.cvPopupShow {
+    transform: translateX(-50%) scale(1);
+}
+
+.cvPopupInnerRow {
+    width: 100%;
+    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cvPopupIcon {
+    justify-self: last baseline;
+    margin-right: 20px;
+}
+.cvPopupIcon * {
+    fill: tomato;
+}
+.cvPopupLink {
+    color: #fefffe;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.cvPopupInnerRow:hover {
+    background-color: #101110;
+}
+
+/* MENU_BLOCK-downLoadCV-cvPopup_ENDS */
+
+/* MENU_BLOCK-navbarBlock_STARTS */
+
+.navbarBlock {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 40px;
+    height: 100%;
+}
+
+.navbarlist {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.linkItemContainer {
+    transition: all 0.6s ease-in-out;
+}
+
+.linkItemContainer:hover {
+    filter: brightness(0.6);
+}
+
+.link {
+    color: #fefffe;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    filter: brightness(0.8);
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    position: relative;
+}
+
+.link::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    transform: scale(0);
+    transform-origin: right;
+    background-color: #ff3297;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover::after {
+    transform: scale(1);
+}
+
+.closeItem {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+}
+
+.langChoice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    filter: brightness(0.8);
+    z-index: 1;
+    position: relative;
+    width: 36px;
+    cursor: pointer;
+}
+
+.langInput {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: #fefffe;
+    margin: 0;
+    text-transform: uppercase;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 15px;
+}
+
+.langInput > option {
+    color: #101110;
+}
+
+.downArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-52%);
+    right: 0;
+    pointer-events: none;
+}
+
+.hamburger {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* MENU_BLOCK-navbarBlock_ENDS */
+
+@media (max-width: 1280px) {
+    .downloadLabel {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    .logo > span {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .cvPopup {
+        left: 100%;
+        transform: translateX(-100%) scale(0);
+        width: 100%;
+    }
+
+    .cvPopupShow {
+        transform: translateX(-100%) scale(1);
+    }
+
+    .closeItem {
+        width: fit-content;
+    }
+
+    .navbarBlock {
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .downloadLabel {
+        display: none;
+    }
+    .navbarlist {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: url("../../assets/background-asset.svg") no-repeat left bottom/cover, #101110;
+        z-index: 999;
+        transform: translateY(-100%);
+        transition: all 0.6s ease-in-out;
+    }
+
+    .navbarlistActive {
+        transform: translateY(0);
+    }
+
+    .closeItem {
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+        pointer-events: all;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .cvPopup {
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+    }
+
+    .cvPopupShow {
+        transform: translateX(-50%) scale(1);
+    }
+}
